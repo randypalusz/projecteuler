@@ -10,7 +10,6 @@ public class Problem_7 {
         List<Double> primeList = new ArrayList<>();
         primeList.add(2d);
 
-        int primeNumPos = 1;
         for(double i = 3; i<10000000000000d; i++) {
             if (isPrime(i)) {
                 primeList.add(i);
