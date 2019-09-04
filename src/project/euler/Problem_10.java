@@ -3,7 +3,7 @@ package project.euler;
 public class Problem_10 {
     public static void main(String[] args){
         //Account for 2 being a prime number
-        Double sum = 2.0;
+        double sum = 2.0;
 
         for(double i = 3.0; i <= 2000000d; i++){
             if(isPrime(i)){
