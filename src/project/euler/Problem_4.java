@@ -3,7 +3,6 @@ package project.euler;
 
 public class Problem_4 {
 
-
     // Driver code
     public static void main(String[] args) {
         Integer product;
