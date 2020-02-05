@@ -1,14 +1,14 @@
 package project.euler;
 
-import java.util.Arrays;
-import java.util.List;
 
 class Problem_13 {
     public static void main(String[] args) {
         String bigString = new GiantString().begin;
-        StringBuilder tempString = new StringBuilder("");
+        StringBuilder tempString = new StringBuilder();
         String[] tempLine = bigString.split("\n");
-        List<String> lineList = Arrays.asList(tempLine);
+        int onesDigit;
+        int tempSum = 0;
+        int carry = 0;
         //All lines in lineList, separated at the \n character
         //Procedure as follows:
         //  Start at final character
@@ -16,6 +16,20 @@ class Problem_13 {
         //  Compute sum of all those elements, store in right-most position in tempString
         //  Take carry of that summation, add it to the next-most significant addition (one to the left)
         //  repeat until finished
+        for(int i = tempLine[0].length() - 1; i>=0; i--){
+            for (String s : tempLine) {
+                tempSum = tempSum + Character.getNumericValue(s.charAt(i));
+            }
+            tempSum = tempSum + carry;
+            onesDigit = tempSum%10;
+            tempString.insert(0, onesDigit);
+            carry = tempSum/10;
+            tempSum = 0;
+        }
+
+        //Following is for leftover digits in the carry
+        tempString.insert(0, carry);
+        System.out.println(tempString);
     }
 
 }
