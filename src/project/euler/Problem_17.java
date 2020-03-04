@@ -25,7 +25,7 @@ class Problem_17 {
 
 class NumberCount {
     //<numberToBeAssessed, numberOfLettersInNumber>
-    HashMap<Integer, Integer> intCountMap = new HashMap<>(){
+    HashMap<Integer, Integer> intCountMap = new HashMap<Integer, Integer>(){
         {
             put(0, 0);
             put(1, 3);
